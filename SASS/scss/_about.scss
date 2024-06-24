@@ -1,0 +1,97 @@
+// About
+
+.about {
+  @include for-phone-only {
+    width: 90%;
+  }
+  width: 80%;
+  margin: 0 auto 40px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__title {
+    background-color: $light-grey;
+    text-align: center;
+    padding: 20px;
+  }
+
+  &__h1 {
+    @include fontSize(22px);
+    color: $dark-grey;
+    @extend %half-margin-top,
+      %no-margin-right,
+      %default-margin-bottom,
+      %no-margin-left;
+  }
+
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__link {
+      @include fontSize(12px);
+      text-decoration: none;
+      color: $dark-grey;
+      &__hover {
+        text-decoration: underline;
+        color: $purple;
+      }
+    }
+
+    &__img {
+      width: 10px;
+      margin: 8px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    @extend %double-margin-bottom;
+  }
+
+  &__intro {
+    font-weight: 100;
+    color: $dark-grey;
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+    @include fontSize(16px);
+
+    @include for-phone-only {
+      width: 90%;
+    }
+
+    @include for-tablet-only {
+      width: 80%;
+    }
+  }
+
+  &__split {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__img-description {
+    width: $img-width;
+
+    @include for-phone-only {
+      width: 80%;
+    }
+  }
+
+  &__txt {
+    width: calc(100% - #{$img-width}); // interpolação #{$var}
+    @include for-phone-only {
+      width: 90%;
+      text-align: center;
+    }
+  }
+
+  &__p {
+    @include fontSize(14px);
+    padding: 10px 20px;
+    color: $dark-grey;
+  }
+}
